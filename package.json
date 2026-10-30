@@ -1,0 +1,29 @@
+{
+  "name": "codemode-upi-pay",
+  "version": "1.0.0",
+  "description": "Free UPI payment integration: accept UPI straight into your bank account (no gateway, no fees), confirmed automatically from your bank's Gmail alerts. Node SDK, REST + webhook server and a drop-in checkout.",
+  "main": "src/index.js",
+  "types": "index.d.ts",
+  "bin": { "codemode-upi-pay": "bin/server.js" },
+  "files": ["src", "sql", "checkout", "bin", "examples", "index.d.ts", "README.md", "LICENSE"],
+  "scripts": {
+    "start": "node bin/server.js",
+    "demo": "UPI_TEST_MODE=1 UPI_ID=demo@upi UPI_NAME='Demo Shop' node bin/server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": ["upi", "payments", "india", "payment-gateway", "qr", "gpay", "phonepe", "paytm", "bhim", "checkout", "gmail", "no-fees"],
+  "author": "Codemode (https://github.com/codemodeai)",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/codemodeai/codemode-upi-pay.git" },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "imapflow": "^2.10.0",
+    "mailparser": "^3.14.1",
+    "qrcode": "^1.5.4"
+  },
+  "peerDependencies": { "pg": ">=8" },
+  "peerDependenciesMeta": { "pg": { "optional": true } },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.13"
+  }
+}
